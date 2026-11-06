@@ -14,5 +14,10 @@ public class CommunicationConfig {
 		return new RestTemplate(new JdkClientHttpRequestFactory());
 	}
 	
-
+	@Bean
+	public RestClient restClient() {
+		return RestClient.builder()
+							.baseUrl("https://jsonplaceholder.typicode.com")
+							.build();
+	}
 }

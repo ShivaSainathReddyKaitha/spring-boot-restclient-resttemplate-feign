@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.LLM.dto.Post;
+import com.project.LLM.service.FeignClientService;
 import com.project.LLM.service.RestClientService;
 import com.project.LLM.service.RestTemplateService;
 
@@ -25,7 +26,9 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api")
 public class CommunicationController {
 	
-	private final RestTemplateService service;
+//	private final RestTemplateService service;
+//	private final RestClientService service;
+	private final FeignClientService service;
 	
 	@GetMapping("/posts")
 	public List<Post> getPosts() {
